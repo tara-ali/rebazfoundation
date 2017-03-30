@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Project Type', 'Number of Projects'],
+          ['Education',     11],
+          ['Health',      15],
+          ['Civic',  13]
+        ]);
+
+        var options = {
+         title: 'My Daily Activities',
+          is3D: true,
+          colors:['#06425C','#51A39D', '#878483']
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+        
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 500px; height: 500px;"></div>
+  </body>
+</html>
